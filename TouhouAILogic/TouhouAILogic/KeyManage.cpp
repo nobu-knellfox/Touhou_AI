@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "KeyManage.h"
 
+
 /*
 const int INPUT_MOUSE = 0;                  // マウスイベント
 const int INPUT_KEYBOARD = 1;               // キーボードイベント
@@ -33,8 +34,7 @@ const int VK_DOWN = 0x28;                   // DOWN
 
 void SendKey(short keycode)
 {
-	Sleep(300);
-	
+	Sleep(20);
 	
 	int num = 2;
 	INPUT inp[2];
@@ -48,7 +48,7 @@ void SendKey(short keycode)
 
 	SendInput(1, &inp[0], sizeof(INPUT));
 
-	Sleep(200);
+	Sleep(20);
 
 	inp[1].type = INPUT_KEYBOARD;
 	inp[1].ki.wVk = keycode;
@@ -62,5 +62,10 @@ void SendKey(short keycode)
 
 void TouhouAILogic::KeyManage::SendUp()
 {
-	SendKey(VK_UP);
+	for (int i = 0; i < 10; ++i)
+		SendKey(VK_UP);
+
+
+	for (int i = 0; i < 10; ++i)
+		SendKey(VK_DOWN);
 }

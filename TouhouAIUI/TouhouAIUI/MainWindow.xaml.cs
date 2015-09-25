@@ -148,7 +148,7 @@ namespace TouhouAIUI
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            //p = Process.GetProcessesByName("th15")[0];
+            p = Process.GetProcessesByName("th15")[0];
             TouhouAILogic.Class1 cls = new TouhouAILogic.Class1();
             x.Content = cls.GetString();
         }
